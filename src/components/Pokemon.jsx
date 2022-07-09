@@ -27,7 +27,6 @@ function Pokemon(props) {
     let obj = props.obj;
     let pokemon = obj.name;
     console.log(pokemon)
-    let [data, setData] = useState();
     let [url, setUrl] = useState();
     let [type, setType] = useState();
     let [id, setId] = useState();
@@ -35,19 +34,20 @@ function Pokemon(props) {
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
             .then(res => res.json())
             .then(data => {
-                setData(data);
                 setUrl(data.sprites.front_default)
                 setType(data.types[0].type.name)
                 setId(data.id)
             })
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
         <div style={{ background: `${colors[type]}` }} className="pokemon">
             <img src={url} alt="" className="pokemon-img" />
-            <div className="id">{"# "+ id}</div>
+            <div className="id">{"# " + id}</div>
             <div className="title">{pokemon}</div>
-            <div className="type">{"Type: "+type}</div>
+            <div className="type">{"Type: " + type}</div>
         </div>
     )
 }

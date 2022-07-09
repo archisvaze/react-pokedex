@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./wallpaper.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-logo {
+    margin: 30px 0;
+    height: 140px;
+
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pokemon {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    height: 200px;
+    width: 140px;
+    margin: 15px;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.3);
+    transition: 0.2s;
+}
+
+.pokemon:hover .pokemon-img {
+    transform: scale(1.5);
+}
+
+.pokemon:hover {
+    transform: scale(1.1);
+}
+
+.pokemon-img {
+    transition: 0.4s;
+    width: 100px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px black;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.id {
+    padding: 7px 14px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+    font-weight: bold;
+    margin: 10px 0;
+
+}
+
+.type {
+    text-transform: capitalize;
+    margin: 10px 0;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.404);
+}
+
+@media screen and (min-width: 700px) {
+    .pokemon {
+        height: 260px;
+        width: 180px;
+        margin: 20px;
+    }
+
+    .container {
+        max-width: 1440px;
+
+    }
+
+    .pokemon-img {
+        width: 130px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .id {
+        padding: 5px 10px;
+    }
+}

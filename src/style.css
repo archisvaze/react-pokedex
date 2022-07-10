@@ -42,14 +42,14 @@ body {
     height: 200px;
     width: 140px;
     margin: 15px;
-    overflow: hidden;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.3);
     transition: 0.2s;
+    position: relative;
 }
 
 .pokemon:hover .pokemon-img {
@@ -61,6 +61,8 @@ body {
 }
 
 .pokemon-img {
+    top: -10px;
+    position: absolute;
     transition: 0.4s;
     width: 100px;
 }
@@ -85,11 +87,12 @@ body {
 
 .type {
     text-transform: capitalize;
-    margin: 10px 0;
+    margin: 15px 0;
     font-size: 12px;
     font-weight: bold;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.404);
 }
+
 
 @media screen and (min-width: 700px) {
     .pokemon {
@@ -104,6 +107,7 @@ body {
     }
 
     .pokemon-img {
+        top: 0;
         width: 130px;
     }
 
@@ -114,4 +118,13 @@ body {
     .id {
         padding: 5px 10px;
     }
+
+    .circle {
+        height: 120px;
+        width: 120px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 60px;
+        margin-bottom: 15px;
+    }
+
 }

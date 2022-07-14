@@ -1,9 +1,8 @@
 # React-Pokedex
 
-Pokedex project made using Reactjs and PokeAPI.  
+### Pokemon Catalog app using Reactjs and PokeAPI.  
 
-Live Site: https://celebrated-nougat-f6e0aa.netlify.app/
-
+Site Link : https://celebrated-nougat-f6e0aa.netlify.app/
 
 ![Screenshot 2022-07-09 224340](https://user-images.githubusercontent.com/92965519/178116055-0694c32b-9ff0-409e-9f05-b63737d73af0.png)
 

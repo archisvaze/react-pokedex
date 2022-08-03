@@ -30,6 +30,8 @@ function Pokemon(props) {
     let [url, setUrl] = useState();
     let [type, setType] = useState();
     let [id, setId] = useState();
+    let [flip, setflip] = useState(false);
+
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
             .then(res => res.json())
@@ -39,16 +41,26 @@ function Pokemon(props) {
                 setId(data.id)
             })
 
-       // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
-        <div style={{ background: `${colors[type]}` }} className="pokemon card">
-            <div className="circle"></div>
-            <img src={url} alt="" className="pokemon-img" />
-            <div className="id">{"# " + id}</div>
-            <div className="title">{pokemon}</div>
-            <div className="type">{"Type: " + type}</div>
+        <div onClick={() => {
+            setflip(!flip);
+        }} className="pokemon card">
+            <div style={{transform: flip === true ? "rotateY(180deg)": "rotateY(0deg)", background: `${colors[type]}`}} className="card-flip">
+                <div className="front">
+                    <div className="circle"></div>
+                    <img src={url} alt="" className="pokemon-img" />
+                    <div className="id">{"# " + id}</div>
+                    <div className="title">{pokemon}</div>
+                    <div className="type">{"Type: " + type}</div>
+                </div>
+                <div className="back">
+
+                </div>
+            </div>
+
         </div>
     )
 }

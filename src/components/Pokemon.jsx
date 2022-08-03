@@ -31,6 +31,7 @@ function Pokemon(props) {
     let [type, setType] = useState();
     let [id, setId] = useState();
     let [flip, setflip] = useState(false);
+    let [abilities, setAbilities] = useState([])
 
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
@@ -39,6 +40,7 @@ function Pokemon(props) {
                 setUrl(data.sprites.front_default)
                 setType(data.types[0].type.name)
                 setId(data.id)
+                setAbilities(data.abilities)
             })
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -48,7 +50,7 @@ function Pokemon(props) {
         <div onClick={() => {
             setflip(!flip);
         }} className="pokemon card">
-            <div style={{transform: flip === true ? "rotateY(180deg)": "rotateY(0deg)", background: `${colors[type]}`}} className="card-flip">
+            <div style={{ transform: flip === true ? "rotateY(180deg)" : "rotateY(0deg)", background: `${colors[type]}` }} className="card-flip">
                 <div className="front">
                     <div className="circle"></div>
                     <img src={url} alt="" className="pokemon-img" />

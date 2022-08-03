@@ -1,6 +1,6 @@
-# React-Pokedex
+# Pokedex | Pokemon App 
 
-### 151 Pokemon Catalog app using Reactjs and PokeAPI.  
+### 151 Pokemon Catalog app using React and PokeAPI.  
 
 Site Link : https://celebrated-nougat-f6e0aa.netlify.app/
 

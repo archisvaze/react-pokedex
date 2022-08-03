@@ -39,7 +39,7 @@ function Pokemon(props) {
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
             .then(res => res.json())
             .then(data => {
-                setUrl(data.sprites.other.home.front_default)
+                setUrl(data.sprites.other["official-artwork"].front_default)
                 setType(data.types[0].type.name)
                 setId(data.id)
                 setAbilities(data.abilities.slice(0, 2))

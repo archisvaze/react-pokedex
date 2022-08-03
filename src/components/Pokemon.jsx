@@ -31,7 +31,10 @@ function Pokemon(props) {
     let [type, setType] = useState();
     let [id, setId] = useState();
     let [flip, setflip] = useState(false);
+    // eslint-disable-next-line
     let [abilities, setAbilities] = useState([])
+    // eslint-disable-next-line
+    let [moves, setMoves] = useState([])
 
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
@@ -41,6 +44,7 @@ function Pokemon(props) {
                 setType(data.types[0].type.name)
                 setId(data.id)
                 setAbilities(data.abilities)
+                setMoves(data.moves)
             })
 
         // eslint-disable-next-line react-hooks/exhaustive-deps

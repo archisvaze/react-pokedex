@@ -43,7 +43,7 @@ function Pokemon(props) {
     }, [])
 
     return (
-        <div style={{ background: `${colors[type]}` }} className="pokemon">
+        <div style={{ background: `${colors[type]}` }} className="pokemon card">
             <div className="circle"></div>
             <img src={url} alt="" className="pokemon-img" />
             <div className="id">{"# " + id}</div>

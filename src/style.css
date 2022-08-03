@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("./wallpaper.jpg");
+    background-image: url("./wallpaper2.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -69,10 +69,10 @@ body {
 }
 
 .pokemon-img {
-    top: -10px;
+    top: -5px;
     position: absolute;
     transition: 0.4s;
-    width: 100px;
+    width: 80px;
 }
 
 .title {
@@ -143,7 +143,7 @@ body {
     }
 
     .pokemon-img {
-        top: 0;
+        top: -10px;
         width: 130px;
     }
 

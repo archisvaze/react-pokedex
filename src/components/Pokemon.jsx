@@ -26,7 +26,6 @@ function Pokemon(props) {
     }
     let obj = props.obj;
     let pokemon = obj.name;
-    console.log(pokemon)
     let [url, setUrl] = useState();
     let [type, setType] = useState();
     let [id, setId] = useState();
@@ -40,11 +39,11 @@ function Pokemon(props) {
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
             .then(res => res.json())
             .then(data => {
-                setUrl(data.sprites.front_default)
+                setUrl(data.sprites.other.home.front_default)
                 setType(data.types[0].type.name)
                 setId(data.id)
-                setAbilities(data.abilities)
-                setMoves(data.moves)
+                setAbilities(data.abilities.slice(0, 2))
+                setMoves(data.moves.slice(0, 5))
             })
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -63,7 +62,9 @@ function Pokemon(props) {
                     <div className="type">{"Type: " + type}</div>
                 </div>
                 <div className="back">
-
+                    <div className="abilites-container">
+                       
+                    </div>
                 </div>
             </div>
 

@@ -6,22 +6,21 @@
     color: white;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("./wallpaper3.webp");
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
+
 
 .main {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url("./wallpaper.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: brightness(85%);
 }
+
 
 .pokemon-logo {
     margin: 30px 0;
@@ -62,6 +61,7 @@ body {
 
 .card-flip:hover .pokemon-img {
     transform: scale(1.5);
+    filter: brightness(120%) saturate(2);
 }
 
 .card:hover {
@@ -73,6 +73,7 @@ body {
     position: absolute;
     transition: 0.4s;
     width: 80px;
+    filter: brightness(95%) saturate(1);
 }
 
 .title {
@@ -111,6 +112,7 @@ body {
     transform-style: preserve-3d;
 }
 
+
 .front,
 .back {
     position: absolute;
@@ -129,6 +131,29 @@ body {
     transform: rotateY(180deg);
 }
 
+.back-img {
+    position: absolute;
+    top: 0;
+    width: 180px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.stat-num {
+    font-size: 12px;
+}
+
+.stat-type {
+    font-size: 9px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.6);
+}
 
 @media screen and (min-width: 700px) {
     .pokemon {

@@ -30,20 +30,22 @@ function Pokemon(props) {
     let [type, setType] = useState();
     let [id, setId] = useState();
     let [flip, setflip] = useState(false);
-    // eslint-disable-next-line
-    let [abilities, setAbilities] = useState([])
-    // eslint-disable-next-line
-    let [moves, setMoves] = useState([])
+    let [hp, setHp] = useState()
+    let [attack, setAttack] = useState()
+    let [defence, setDefence] = useState()
+    let [backUrl, setBackUrl] = useState()
 
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
             .then(res => res.json())
             .then(data => {
                 setUrl(data.sprites.other["official-artwork"].front_default)
+                setBackUrl(data.sprites.back_default)
                 setType(data.types[0].type.name)
                 setId(data.id)
-                setAbilities(data.abilities.slice(0, 2))
-                setMoves(data.moves.slice(0, 5))
+                setHp(data.stats[0].base_stat)
+                setAttack(data.stats[1].base_stat)
+                setDefence(data.stats[2].base_stat)
             })
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -62,8 +64,23 @@ function Pokemon(props) {
                     <div className="type">{"Type: " + type}</div>
                 </div>
                 <div className="back">
+                    <img className="back-img" src={backUrl} alt="" />
+                    <div className="stats-container">
+                        <div className="stat">
+                            <p className="stat-num">{hp}</p>
+                            <p className="stat-type">HP</p>
+                        </div>
+                        <div className="stat">
+                            <p className="stat-num">{attack}</p>
+                            <p className="stat-type">ATTACK</p>
+                        </div>
+                        <div className="stat">
+                            <p className="stat-num">{defence}</p>
+                            <p className="stat-type">DEFENCE</p>
+                        </div>
+                    </div>
                     <div className="abilites-container">
-                       
+
                     </div>
                 </div>
             </div>

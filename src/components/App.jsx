@@ -19,7 +19,9 @@ function App(props) {
     return (
         <>
             <div className="main">
-                <img src={PokemonLogo} alt="" className="pokemon-logo" />
+
+            <img src={PokemonLogo} alt="" className="pokemon-logo" />
+
                 <div className="container">
                     {pokeArr.map(obj => {
                         return (
